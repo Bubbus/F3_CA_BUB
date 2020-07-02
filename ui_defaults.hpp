@@ -253,5 +253,10 @@ class CA2_DefaultCombo
 	wholeHeight = 0.45;
 	x = 0;
 	y = 0;
-
+	
+	class ComboScrollBar
+	{
+		color[] = {1,1,1,1};
+	};
+	
 };
