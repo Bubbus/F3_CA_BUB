@@ -18,6 +18,8 @@ waitUntil
             _display closeDisplay 2;
         };
 
+        uiSleep 0.01;
+
     };
 
     false

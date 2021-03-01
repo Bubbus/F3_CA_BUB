@@ -433,6 +433,19 @@ class Extended_Killed_EventHandlers
 // ============================================================================================
 
 
+class Extended_PreInit_EventHandlers
+{
+	class AddCustomSettings
+	{
+		init = "call compile preprocessFileLineNumbers 'components\miscShared\fn_addCustomSettings.sqf'";
+	};
+
+};
+
+
+// ============================================================================================
+
+
 class Extended_InitPost_EventHandlers
 {
 

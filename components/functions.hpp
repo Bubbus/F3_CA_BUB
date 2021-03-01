@@ -39,3 +39,12 @@ class BIS
 		class moduleCivilianPresence{};
 	};
 };
+
+class ace_medical_feedback
+{
+	class overrides
+	{
+		file = "components\downtime";
+		class effectUnconscious{};
+	};
+};

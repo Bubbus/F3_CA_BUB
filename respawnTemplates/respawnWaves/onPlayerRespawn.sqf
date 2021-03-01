@@ -146,7 +146,7 @@ if (_hasBeenKilled) then
         if (_hasSpawner) exitWith { true };
 
         _waveInfo = GET_RESPAWN_WAVE(_side);
-        _hasWave = ((count _waveInfo) > 0) and {(_waveInfo select 0) isEqualTo true};
+        _hasWave = ((count _waveInfo) > 0) and {(_waveInfo select WAVEINFO_ISACTIVE) isEqualTo true};
         if (_hasWave) exitWith { true };
 
 		false
@@ -155,14 +155,14 @@ if (_hasBeenKilled) then
 
     if !((_unit getVariable ["mySpawner", objNull]) isEqualTo objNull) then
     {
-        _waveInfo = [true, _unit getVariable ["mySpawner", objNull], ORIGINAL_SQUAD, time];
+        _waveInfo = [true, _unit getVariable ["mySpawner", objNull], ORIGINAL_SQUAD, serverTime];
     };
 
     DEBUG_PRINT_LOG("[RespawnWaves] Respawn wave enabled, teleporting...")
 
     // Try spawning at designated location, or fallback to base location.
-    _spawnAt = _waveInfo param [1, []];
-    _joinGroup = _waveInfo param [2, ""];
+    _spawnAt = _waveInfo param [WAVEINFO_SPAWNAT, []];
+    _joinGroup = _waveInfo param [WAVEINFO_JOINGROUP, ""];
 
     // Try *real hard* to get the player out of the damned spectator group.
     [_unit] joinSilent grpNull;

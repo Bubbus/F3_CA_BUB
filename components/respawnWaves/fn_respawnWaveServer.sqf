@@ -59,7 +59,7 @@ _respawnGroupId = switch (_squadMode) do
 
 SET_RESPAWN_WAVE_READY(_side,false);
 
-_waveArray = [true, _posOrObject, _respawnGroupId, time];
+_waveArray = [true, _posOrObject, _respawnGroupId, serverTime];
 SET_RESPAWN_WAVE(_side,_waveArray);
 
 _curWaves = RESPAWN_WAVES(_side);
